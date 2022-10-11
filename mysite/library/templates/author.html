@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block title %}Autorius{% endblock %}
+
+{% block content %}
+<h1>Autorius:</h1>
+<p>Vardas: {{ single_author.first_name }}</p>
+<p>Pavarde: {{ single_author.last_name }}</p>
+<p>Aprasymas: {{ single_author.description | safe }}</p>
+<h5>Autoriaus knygos: </h5>
+{% for book in single_author.books.all %}
+{{ book.title }}
+{% endfor %}
+{% endblock %}
